@@ -1,5 +1,7 @@
 function initialize()
 {
+    grocery = document.getElementById("groceries");
+    groceryList = [];
 
 }
 
@@ -16,4 +18,9 @@ function deleteGroceries()
 function dupeCheck()
 {
     
+}
+
+display()
+{
+    grocery = groceryList;
 }
