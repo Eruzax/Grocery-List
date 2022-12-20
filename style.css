@@ -1,6 +1,7 @@
 *
 {
     margin: 10px;
+    color:black;
 }
 
 button
@@ -8,4 +9,10 @@ button
     font-family: Verdana;
     padding: 20px;
     border-radius: 20px;
+}
+
+button:hover
+{
+    transition: 0.5s;
+    background-color: rgb(177, 177, 177);
 }

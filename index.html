@@ -9,17 +9,23 @@
     <script src="script.js"></script>
 </head>
 <body onload="initialize();">
+    <h1>Grocery List</h1>
     Groceries: <span id="groceries"></span>
 
-    Enter Item Name:<input type="text" id="itemName"/>
-    <div id="buttons">
-        <button onclick="addGroceries();">Add Grocieries</button>
+    <div id="add">
+        Enter Item Name:<input type="text" id="itemname"/>
+        <button onclick="addGroceries();">Add Groceries</button>
+    </div>
+
+    <div id="remove">
+        Enter Item Number:<input type="text" id="deleteitemnum"/>
         <button onclick="deleteGroceries();">Delete Groceries</button>
     </div>
+    
     <div id="move">
-        <span>Enter Item Number:<input type="text" id="itemNumber"/></span>
+        <span>Enter Item Number:<input type="text" id="moveitemNumber"/></span>
         <button onclick="moveUp();">&#8593</button>
-        <button onclick="moveUp();">&#8595</button>
+        <button onclick="moveDown();">&#8595</button>
     </div>
 </body>
 </html>
