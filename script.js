@@ -9,6 +9,7 @@ function initialize()
     moveItem = document.getElementById("moveitemNumber");
 
     previousIndex = 0;
+    previousItem = "";
 
     display();
 }
@@ -28,10 +29,10 @@ function addGroceries()
 
 function deleteGroceries()
 {
+    let item = deleteItem.value;
     if (deleteItem.value != "" && groceryListArray.length != 0)
     {
-        let item = deleteItem.value;
-        groceryListArray.splice(item, 1);
+        groceryListArray.splice(item - 1, 1);
     }
 }
 
