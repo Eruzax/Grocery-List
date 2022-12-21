@@ -30,10 +30,12 @@ function addGroceries()
 function deleteGroceries()
 {
     let item = deleteItem.value;
-    if (deleteItem.value != "" && groceryListArray.length != 0)
+    if (deleteItem.value != "" && groceryListArray.length != 0 && deleteItem.value != 0)
     {
         groceryListArray.splice(item - 1, 1);
     }
+
+    display();
 }
 
 function moveUp()
@@ -41,14 +43,12 @@ function moveUp()
     if (moveItem.value != "" && groceryListArray.length != 0)
     {
         let item = moveItem.value;
-        let counter = 0;
         if (item > 0 && item - 1 != 0)
         {
             let temp = groceryListArray[item - 1];
             groceryListArray[item - 1] = groceryListArray[item];
             groceryListArray[item] = temp;
             //move it up
-            counter++;
         }
         else if (item - 1 < 0 || item - counter == 0)
         {

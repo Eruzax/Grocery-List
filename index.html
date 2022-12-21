@@ -11,21 +11,22 @@
 <body onload="initialize();">
     <h1>Grocery List</h1>
     Groceries: <span id="groceries"></span>
-
-    <div id="add">
-        Enter Item Name:<input type="text" id="itemname"/>
-        <button onclick="addGroceries();">Add Groceries</button>
-    </div>
-
-    <div id="remove">
-        Enter Item Number:<input type="text" id="deleteitemnum"/>
-        <button onclick="deleteGroceries();">Delete Groceries</button>
-    </div>
+    <div class="buttons">
+        <div id="add">
+            Enter Item Name:<input type="text" id="itemname"/>
+            <button onclick="addGroceries();">Add Groceries</button>
+        </div>
     
-    <div id="move">
-        <span>Enter Item Number:<input type="text" id="moveitemNumber"/></span>
-        <button onclick="moveUp();">&#8593</button>
-        <button onclick="moveDown();">&#8595</button>
+        <div id="remove">
+            Enter Item Number:<input type="text" id="deleteitemnum"/>
+            <button onclick="deleteGroceries();">Delete Groceries</button>
+        </div>
+        
+        <div id="move">
+            <span>Enter Item Number:<input type="text" id="moveitemNumber"/></span>
+            <button onclick="moveUp();">&#8593</button>
+            <button onclick="moveDown();">&#8595</button>
+        </div>
     </div>
 </body>
 </html>
