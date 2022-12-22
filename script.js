@@ -108,7 +108,7 @@ function display()
     groceryList = "<br />";
     for (var i = 0; i < groceryListArray.length; i++)
     {
-        groceryList += i + 1 + ". " + groceryListArray[i] + "<br />";
+        groceryList += i + 1 + ")" + groceryListArray[i] + "<br />";
     }
 
     grocery.innerHTML = groceryList;
