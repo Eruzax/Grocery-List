@@ -8,9 +8,6 @@ function initialize()
     deleteItem = document.getElementById("deleteitemnum");
     moveItem = document.getElementById("moveitemNumber");
 
-    previousIndex = 0;
-    previousItem = "";
-
     display();
 }
 
@@ -47,12 +44,16 @@ function moveUp()
     if (moveItem.value != "" && groceryListArray.length != 0)
     {
         let item = moveItem.value;
+
         if (item > 0 && item - 1 != 0)
         {
             let temp = groceryListArray[item - 1];
             groceryListArray[item - 1] = groceryListArray[item - 2];
             groceryListArray[item - 2] = temp;
-            //move it up
+            if (item - 1 >= 0)
+            {
+                moveItem.value = item - 1;
+            }
         }
         else if (item - 1 < 0 || item - counter == 0)
         {
@@ -68,16 +69,22 @@ function moveDown()
     if (moveItem.value != "" && groceryListArray.length != 0)
     {
         let item = moveItem.value;
-        if (item > 0 && item - 1 != 0)
+        console.log(item);
+        if (item > 0 && item <= groceryListArray.length)
         {
             let temp = groceryListArray[item - 1];
             groceryListArray[item - 1] = groceryListArray[item];
             groceryListArray[item] = temp;
-            //move it up
+
+            if (item + 1 != groceryListArray.length)
+            {
+                moveItem.value++;
+                console.log(moveItem.value);
+            }
         }
-        else if (item - 1 < 0 || item - counter == 0)
+        else if (item + 1 == groceryListArray.length)
         {
-            console.log("It is at the top of the list")
+            console.log("It is at the bottom of the list")
         }
     }
 

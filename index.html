@@ -9,8 +9,12 @@
     <script src="script.js"></script>
 </head>
 <body onload="initialize();">
-    <div class="list">Grocery List: <span id="groceries"></span></div>
-    <div class="buttons">
+    <banner>
+        <img src="img/logo.png">
+    </banner>
+    <div class="content">
+        <div class="list">Grocery List: <span id="groceries"></span></div>
+        <div class="buttons">
         <div id="add">
             Enter Item Name:<input type="text" id="itemname"/>
             <button onclick="addGroceries();">Add Groceries</button>
@@ -27,5 +31,7 @@
             <button onclick="moveDown();">&#8595</button>
         </div>
     </div>
+    </div>
+    
 </body>
 </html>
