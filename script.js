@@ -2,7 +2,7 @@ function initialize()
 {
     grocery = document.getElementById("groceries");
     groceryListArray = [];
-    groceryList = "";
+    groceryList = "<br />";
 
     addItem = document.getElementById("itemname");
     deleteItem = document.getElementById("deleteitemnum");
@@ -24,6 +24,8 @@ function addGroceries()
             console.log(item);
     }
 
+    addItem.value = "";
+
     display();
 }
 
@@ -35,10 +37,33 @@ function deleteGroceries()
         groceryListArray.splice(item - 1, 1);
     }
 
+    deleteItem.value = "";
+
     display();
 }
 
 function moveUp()
+{
+    if (moveItem.value != "" && groceryListArray.length != 0)
+    {
+        let item = moveItem.value;
+        if (item > 0 && item - 1 != 0)
+        {
+            let temp = groceryListArray[item - 1];
+            groceryListArray[item - 1] = groceryListArray[item - 2];
+            groceryListArray[item - 2] = temp;
+            //move it up
+        }
+        else if (item - 1 < 0 || item - counter == 0)
+        {
+            console.log("It is at the top of the list")
+        }
+    }
+
+    display();
+}
+
+function moveDown()
 {
     if (moveItem.value != "" && groceryListArray.length != 0)
     {
@@ -55,11 +80,8 @@ function moveUp()
             console.log("It is at the top of the list")
         }
     }
-}
 
-function moveDown()
-{
-
+    display();
 }
 
 function dupeCheck(item)
@@ -76,10 +98,10 @@ function dupeCheck(item)
 
 function display()
 {
-    groceryList = "";
+    groceryList = "<br />";
     for (var i = 0; i < groceryListArray.length; i++)
     {
-        groceryList += i + 1 + "." + groceryListArray[i] + "\n";
+        groceryList += i + 1 + ". " + groceryListArray[i] + "<br />";
     }
 
     grocery.innerHTML = groceryList;

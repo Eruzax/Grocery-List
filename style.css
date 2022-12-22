@@ -10,9 +10,14 @@ body{
     justify-content: space-between;
 }
 
+.list
+{
+    font-size: 20pt;
+}
+
 #groceries
 {
-    
+
 }
 
 button
